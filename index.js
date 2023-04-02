@@ -4,6 +4,8 @@ const app=express();
 const port=8000;
 //require this library to use layouts
 const expressLayouts=require('express-ejs-layouts');
+//require mongoose in order to connect the database
+const db=require('./config/mongoose');
 
 //acess static files
 app.use(express.static('./assests'));
