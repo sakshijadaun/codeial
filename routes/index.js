@@ -12,5 +12,8 @@ console.log('Router Loaded');
 //acess homecontroller action through th homeController
 router.get('/',homeController.home);
 
+//acess users
+router.use('/users',require('./users'));
+
 //export router to available to index.js
 module.exports=router;
