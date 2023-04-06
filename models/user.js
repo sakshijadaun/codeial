@@ -1,16 +1,16 @@
 const mongoose=require('mongoose');
-const userSchema=new mongoose.schema({
+const userSchema=new mongoose.Schema({
     email:{
         type: String,
         required: true,
         unique: true
     },
     password:{
-        type: string,
+        type: String,
         required: true,
     },
     name:{
-        type: string,
+        type: String,
         required: true
     },
 },{
@@ -18,7 +18,7 @@ const userSchema=new mongoose.schema({
 });
 
 //telling mongoose to use model and tell the collection name
-const User=mongoose.model('User',userSchema);
+const User=mongoose.model('Sakshi',userSchema);
 //export collection
 module.exports=User;
 
