@@ -9,7 +9,7 @@ const homeController=require('../controllers/home_controller');
 //check router is running or not
 console.log('Router Loaded');
 
-//acess homecontroller action through th homeController
+//acess homecontroller action through the homeController
 router.get('/',homeController.home);
 
 //acess users
