@@ -1,13 +1,25 @@
-//funtion publically available to the routes which returns something
-module.exports.home=function(req,res){
-    //read cookie as cookie comes in request 
-    console.log(req.cookies);
+const Post = require('../models/post');
 
-    //change the cookie value as it go back into the response
-    res.cookie('user_id',25);
-    
-   //return res.end('<h1>Express is up for codeial</h1>');
-    return res.render('home',{
-        title: "Home"
-    });
+module.exports.home = function(req, res){
+    // console.log(req.cookies);
+    // res.cookie('user_id', 25);
+
+    // Post.find({}, function(err, posts){
+    //     return res.render('home', {
+    //         title: "Codeial | Home",
+    //         posts:  posts
+    //     });
+    // });
+
+    // populate the user of each post
+    Post.find({}).populate('user').exec(function(err, posts){
+        console.log(posts);
+        return res.render('home', {
+            title: "Codeial | Home",
+            posts:  posts
+        });
+    })
+
 }
+
+// module.exports.actionName = function(req, res){}

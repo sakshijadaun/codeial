@@ -15,5 +15,8 @@ router.get('/',homeController.home);
 //acess users
 router.use('/users',require('./users'));
 
+//route for posts
+router.use('/posts', require('./posts'));
+
 //export router to available to index.js
 module.exports=router;
