@@ -1,6 +1,6 @@
 //fire up the express
 const express=require('express');
-//need this gor reading and writing in cookie after installing 
+//need this library reading and writing in cookie after installing 
 const cookieParser=require('cookie-parser');
 
 const app=express();
@@ -21,16 +21,10 @@ const passportLocal = require('./config/passport-local-strategy');
 const MongoStore=require('connect-mongo')(session);
 
 //need this library to convert scss to the css
-const sassMiddleware=require('node-sass-middleware');
+//const sassMiddleware=require('node-sass-middleware');
 
 //set sassmiddleware
-app.use(sassMiddleware({
-    src: '/assests/scss',
-    dest: '/assests/css',
-    debug: true,
-    outputStyle: 'extended',
-    prefix: '/css'
-}));
+
 
 //reading through the post request
 app.use(express.urlencoded());
