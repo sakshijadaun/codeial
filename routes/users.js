@@ -3,7 +3,9 @@ const router=express.Router();
 const passport=require('passport');
 
 const usersController=require('../controllers/users_controller');
-router.get('/profile', passport.checkAuthentication, usersController.profile);
+router.get('/profile/:id', passport.checkAuthentication, usersController.profile);
+//route for update controller
+router.post('/update/:id', passport.checkAuthentication, usersController.update);
 
 // routes for sign in and sign up page
 router.get('/sign-up',usersController.signUp);

@@ -27,7 +27,7 @@ module.exports.destroy = function(req, res){
         if(comment.user == req.user.id){
             let postId = comment.post;
             comment.remove();
-            Post.findByIdAndDelete(postId, { $pull: {comments: req.params.id}}, function(err, post){
+            Post.findByIdAndUpdate(postId, { $pull: {comments: req.params.id}}, function(err, post){
                 return res.redirect('back');
             })
 
