@@ -12,10 +12,10 @@ const postSchema = new mongoose.Schema({
 
     },
     //include the array of all ids in post schema itself
-    comment: [
+    comments: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'comment'
+            ref: 'Comment'
         }
     ]
 },{

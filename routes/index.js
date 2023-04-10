@@ -13,10 +13,13 @@ console.log('Router Loaded');
 router.get('/',homeController.home);
 
 //acess users
-router.use('/users',require('./users'));
+router.use('/users', require('./users'));
 
 //route for posts
 router.use('/posts', require('./posts'));
+
+//route for comments
+router.use('/comments', require('./comments'));
 
 //export router to available to index.js
 module.exports=router;
