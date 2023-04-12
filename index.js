@@ -25,6 +25,12 @@ const MongoStore=require('connect-mongo')(session);
 
 //set sassmiddleware
 
+//library for flash messages
+const flash = require('connect-flash');
+
+//require the middleware
+const customMware = require('./config/middleware');
+
 
 //reading through the post request
 app.use(express.urlencoded());
@@ -73,6 +79,12 @@ app.use(passport.session());
 
 //this function check whether session cookie is called after the middleware called and user will be set into the locals
 app.use(passport.setAuthenticatedUser);
+
+//use flash
+app.use(flash());
+
+//use the flash middleware
+app.use(customMware.setFlash);
 
 //use express router
 app.use('/',require('./routes'));
