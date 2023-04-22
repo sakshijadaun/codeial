@@ -21,5 +21,8 @@ router.use('/posts', require('./posts'));
 //route for comments
 router.use('/comments', require('./comments'));
 
+//route for api
+router.use('/api', require('./api'));
+
 //export router to available to index.js
 module.exports=router;

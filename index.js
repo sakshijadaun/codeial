@@ -41,6 +41,9 @@ app.use(cookieParser());
 //acess static files
 app.use(express.static('./assests'));
 
+//make the upload Path available to the browser
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
 //use this library 
 app.use(expressLayouts);
 
