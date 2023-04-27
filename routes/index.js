@@ -21,6 +21,9 @@ router.use('/posts', require('./posts'));
 //route for comments
 router.use('/comments', require('./comments'));
 
+//route for likes
+router.use('/likes', require('./likes'));
+
 //route for api
 router.use('/api', require('./api'));
 
